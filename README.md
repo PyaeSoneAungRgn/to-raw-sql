@@ -1,6 +1,6 @@
 [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/PyaeSoneAungRgn/to-raw-sql/run-tests.yml?branch=main&label=test)](https://github.com/PyaeSoneAungRgn/to-raw-sql/actions/workflows/run-tests.yml)
 
-# To Raw Sql
+# To Raw SQL
 
 Get raw SQL from Laravel Query Builder
 
