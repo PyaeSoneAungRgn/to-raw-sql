@@ -23,6 +23,11 @@ User::where('votes', '>', 100)
 // "select * from `users` where `votes` > 100 or (`name` = 'Abigail' and `votes` > 50)"
 ```
 
+## Why?
+`toSql()` doesn't bind values to it. Instead, it returns the raw SQL representation of the query as a string, including placeholders for any bound values.
+
+In some cases, you might want to inspect the actual SQL, with the values already bound to the placeholders. 
+
 ## Testing
 
 ```bash
