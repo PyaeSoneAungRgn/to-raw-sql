@@ -21,6 +21,7 @@ class ToRawSqlServiceProvider extends PackageServiceProvider
                     $bindings[] = $value;
                 }
             }
+
             return Str::replaceArray('?', $bindings, $this->toSql());
         });
     }
