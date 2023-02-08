@@ -9,5 +9,5 @@ it('can execute toRawSql', function () {
                     ->where('votes', '>', 50);
             })
             ->toRawSql()
-    )->toBe('select * from `users` where `votes` > 100 or (`name` = Abigail and `votes` > 50)');
+    )->toBe("select * from `users` where `votes` > 100 or (`name` = 'Abigail' and `votes` > 50)");
 });

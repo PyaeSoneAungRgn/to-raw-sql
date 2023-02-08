@@ -13,7 +13,15 @@ class ToRawSqlServiceProvider extends PackageServiceProvider
     {
         Builder::macro('toRawSql', function (): string {
             /** @var \Illuminate\Database\Eloquent\Builder $this */
-            return Str::replaceArray('?', $this->getBindings(), $this->toSql());
+            $bindings = [];
+            foreach ($this->getBindings() as $value) {
+                if (is_string($value)) {
+                    $bindings[] = "'{$value}'";
+                } else {
+                    $bindings[] = $value;
+                }
+            }
+            return Str::replaceArray('?', $bindings, $this->toSql());
         });
     }
 
