@@ -20,7 +20,7 @@ User::where('votes', '>', 100)
     })
     ->toRawSql();
 
-// "select * from `users` where `votes` > 100 or (`name` = Abigail and `votes` > 50)"
+// "select * from `users` where `votes` > 100 or (`name` = 'Abigail' and `votes` > 50)"
 ```
 
 ## Testing
