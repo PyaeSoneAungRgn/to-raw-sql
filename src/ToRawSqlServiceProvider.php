@@ -2,6 +2,7 @@
 
 namespace PyaeSoneAung\ToRawSql;
 
+use DateTimeInterface;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
 use Spatie\LaravelPackageTools\Package;
@@ -12,13 +13,17 @@ class ToRawSqlServiceProvider extends PackageServiceProvider
     public function boot(): void
     {
         Builder::macro('toRawSql', function (): string {
-            /** @var \Illuminate\Database\Eloquent\Builder $this */
-            $bindings = [];
-            foreach ($this->getBindings() as $value) {
-                if (is_string($value)) {
-                    $bindings[] = "'{$value}'";
-                } else {
-                    $bindings[] = $value;
+            /**
+             * @var \Illuminate\Database\Eloquent\Builder $this
+             */
+            $bindings = $this->getBindings();
+            foreach ($bindings as $key => $value) {
+                if ($value instanceof DateTimeInterface) {
+                    $bindings[$key] = "'{$value->format('Y-m-d H:i:s')}'";
+                } elseif (is_bool($value)) {
+                    $bindings[$key] = (int) $value;
+                } elseif (is_string($value)) {
+                    $bindings[$key] = "'{$value}'";
                 }
             }
 
