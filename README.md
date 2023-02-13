@@ -23,6 +23,14 @@ User::where('votes', '>', 100)
 // "select * from `users` where `votes` > 100 or (`name` = 'Abigail' and `votes` > 50)"
 ```
 
+```php
+DB::table('users')
+   ->whereBetween('votes', [1, 100])
+   ->toRawSql();
+
+// "select * from `users` where `votes` between 1 and 100"
+```
+
 ## Why?
 `toSql()` doesn't bind values to it. Instead, it returns the raw SQL representation of the query as a string, including placeholders for any bound values.
 
