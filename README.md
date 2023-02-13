@@ -2,7 +2,7 @@
 
 # To Raw SQL
 
-Get raw SQL from Laravel Query Builder
+Get raw SQL from Laravel Query Builder and Eloquent Builder
 
 ## Installation
 
