@@ -7,13 +7,15 @@ use PyaeSoneAung\ToRawSql\Services\BuilderToRawSqlService;
 
 trait QueryBuilderMacros
 {
-    public function registerQueryBuilderMacros()
+    public function registerQueryBuilderMacros(): void
     {
         Builder::macro('toRawSql', function (): string {
             /**
              * @var \Illuminate\Database\Query\Builder $this
              */
-            return (new BuilderToRawSqlService($this))->toRawSql();
+            return (new BuilderToRawSqlService(
+                builder: $this
+            ))->toRawSql();
         });
     }
 }
