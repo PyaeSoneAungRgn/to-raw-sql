@@ -42,6 +42,9 @@ In some cases, you might want to inspect the actual SQL, with the values already
 composer test
 ```
 
-## License
+## Version History
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+- 1.1.0
+  - support `Illuminate\Database\Query\Builder`
+- 1.0.0
+  - support `Illuminate\Database\Eloquent\Builder`
