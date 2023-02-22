@@ -45,7 +45,7 @@ composer test
 ## Version History
 
 - 1.1.1
-  - - fixed `boolean` bind for pgsql
+  - fixed `boolean` bind for pgsql
 - 1.1.0
   - support `Illuminate\Database\Query\Builder`
 - 1.0.2
