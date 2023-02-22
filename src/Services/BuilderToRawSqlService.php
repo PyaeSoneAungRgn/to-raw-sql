@@ -22,8 +22,6 @@ class BuilderToRawSqlService
                 $bindings[$key] = "'{$value->format('Y-m-d H:i:s')}'";
             } elseif (is_string($value)) {
                 $bindings[$key] = "'{$value}'";
-            } elseif (is_bool($value)) {
-                $bindings[$key] = (int) $value;
             }
         }
 
