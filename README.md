@@ -44,7 +44,13 @@ composer test
 
 ## Version History
 
+- 1.1.1
+  - - fixed `boolean` bind
 - 1.1.0
   - support `Illuminate\Database\Query\Builder`
+- 1.0.2
+  - support `DateTimeInterface` bind
+- 1.0.1
+  - fixed `string` bind
 - 1.0.0
   - support `Illuminate\Database\Eloquent\Builder`
