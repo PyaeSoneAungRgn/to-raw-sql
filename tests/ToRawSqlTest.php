@@ -42,5 +42,5 @@ it('can execute toRawSql from query builder', function () {
             )
             ->where('active', true)
             ->toRawSql()
-    )->toBe("select * from `users` where `votes` > 100 or (`name` = 'Abigail' and `votes` > 50) and `created_at` = '2023-02-10 13:22:38' and `active` = 1");
+    )->toBe("select * from `users` where `votes` > 100 or (`name` = 'Abigail' and `votes` > 50) and `created_at` = '2023-02-10 13:22:38' and `active` = true");
 });
