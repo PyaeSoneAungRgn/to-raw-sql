@@ -9,7 +9,8 @@ use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class ToRawSqlServiceProvider extends PackageServiceProvider
 {
-    use EloquentBuilderMacros, QueryBuilderMacros;
+    use EloquentBuilderMacros;
+    use QueryBuilderMacros;
 
     public function boot(): void
     {
