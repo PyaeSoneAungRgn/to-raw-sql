@@ -30,21 +30,12 @@ DB::table('users')
    ->toRawSql();
 
 // "select * from `users` where `votes` between 1 and 100"
-```
-
-## Why?
-`toSql()` doesn't bind values to it. Instead, it returns the raw SQL representation of the query as a string, including placeholders for any bound values.
-
-In some cases, you might want to inspect the actual SQL, with the values already bound to the placeholders. 
-
-## Testing
-
-```bash
-composer test
-```
+``` 
 
 ## Version History
 
+- 1.1.2
+  - throw `ToRawSqlException` when encountering PostgreSQL jsonb operator errors 
 - 1.1.1
   - fixed `boolean` bind for pgsql
 - 1.1.0
@@ -55,3 +46,9 @@ composer test
   - fixed `string` bind
 - 1.0.0
   - support `Illuminate\Database\Eloquent\Builder`
+
+## Testing
+
+```bash
+composer test
+```
