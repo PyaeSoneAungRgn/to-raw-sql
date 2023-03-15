@@ -35,17 +35,17 @@ DB::table('users')
 ## Version History
 
 - 1.1.2
-  - throw `ToRawSqlException` when encountering PostgreSQL jsonb operator errors 
+  - throw ToRawSqlException when encountering PostgreSQL jsonb operator errors 
 - 1.1.1
-  - fixed `boolean` bind for pgsql
+  - fixed boolean bind for pgsql
 - 1.1.0
-  - support `Illuminate\Database\Query\Builder`
+  - support Illuminate\Database\Query\Builder
 - 1.0.2
-  - support `DateTimeInterface` bind
+  - support DateTimeInterface bind
 - 1.0.1
-  - fixed `string` bind
+  - fixed string bind
 - 1.0.0
-  - support `Illuminate\Database\Eloquent\Builder`
+  - support Illuminate\Database\Eloquent\Builder
 
 ## Testing
 
