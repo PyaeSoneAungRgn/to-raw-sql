@@ -6,6 +6,7 @@ use PyaeSoneAung\ToRawSql\Concerns\EloquentBuilderMacros;
 use PyaeSoneAung\ToRawSql\Concerns\QueryBuilderMacros;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Illuminate\Foundation\Application;
 
 class ToRawSqlServiceProvider extends PackageServiceProvider
 {
@@ -14,8 +15,11 @@ class ToRawSqlServiceProvider extends PackageServiceProvider
 
     public function boot(): void
     {
-        $this->registerEloquentBuilderMacros();
-        $this->registerQueryBuilderMacros();
+        // skip if laravel version is greater than 10.14.1
+        if (version_compare(Application::VERSION, '10.14.1', '<=') === true) {
+            $this->registerEloquentBuilderMacros();
+            $this->registerQueryBuilderMacros();
+        }
     }
 
     public function configurePackage(Package $package): void

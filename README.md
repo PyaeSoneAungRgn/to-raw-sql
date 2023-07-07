@@ -5,6 +5,8 @@
 
 # To Raw SQL
 
+⚠️ The `toRawSql()` function is included by default in Laravel 10.14.2. You don't need to install this package if your Laravel version is greater than 10.14.1 ⚠️
+
 Get raw SQL from Laravel Query Builder and Eloquent Builder
 
 ## Installation
@@ -36,6 +38,8 @@ DB::table('users')
 
 ## Version History
 
+- 1.1.3
+  - Do not register the `toRawSql()` macro if the Laravel version is greater than 10.14.1
 - 1.1.2
   - throw ToRawSqlException when encountering PostgreSQL jsonb operator errors 
 - 1.1.1
